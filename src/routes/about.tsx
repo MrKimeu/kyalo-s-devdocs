@@ -33,7 +33,7 @@ function AboutPage() {
       </div>
 
       {/* Career Objective from CV */}
-      <section className="mt-10 rounded-xl border border-border bg-card p-6 shadow-xs">
+      <section className="mt-10 rounded-xl border border-transparent bg-card p-6 shadow-none backdrop-blur-sm">
         <h2 className="text-sm font-semibold uppercase tracking-wider text-primary">
           Career Objective
         </h2>
@@ -51,7 +51,7 @@ function AboutPage() {
           {profile.technicalAchievements.map((achievement, idx) => (
             <div
               key={idx}
-              className="flex items-start gap-3 rounded-lg border border-border bg-card p-4 text-sm font-medium text-foreground shadow-xs"
+              className="flex items-start gap-3 rounded-lg border border-transparent bg-card p-4 text-sm font-medium text-foreground shadow-none backdrop-blur-sm"
             >
               <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
                 {idx + 1}

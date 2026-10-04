@@ -74,8 +74,8 @@ export function ProjectTiltCard({ project }: ProjectTiltCardProps) {
           className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl border p-6 text-foreground backdrop-blur-md transition-all duration-300 ${
             isHovered
               ? "border-cyan-400/80 shadow-[0_12px_35px_rgba(6,182,212,0.18)] dark:shadow-[0_12px_45px_rgba(6,182,212,0.25)]"
-              : "border-border/70 shadow-sm hover:border-cyan-500/40"
-          } bg-card/95 dark:bg-[#0c121e]/90`}
+              : "border-transparent shadow-none hover:border-cyan-500/30"
+          } bg-card/60 dark:bg-white/[0.035]`}
         >
           {/* Dynamic Glare Reflection */}
           <div

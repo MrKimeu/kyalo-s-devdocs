@@ -108,7 +108,7 @@ function SkillsPage() {
           {skillCategories.map((group) => (
             <div
               key={group.category}
-              className="rounded-xl border border-border bg-card p-4 shadow-xs"
+              className="rounded-xl border border-transparent bg-card p-4.5 shadow-none backdrop-blur-sm transition-colors hover:bg-white/[0.06] dark:hover:bg-white/[0.05]"
             >
               <span className="text-xs font-semibold uppercase tracking-wider text-primary">
                 {group.category}
@@ -118,7 +118,7 @@ function SkillsPage() {
                   <Badge
                     key={item}
                     variant="secondary"
-                    className="border-border text-xs font-normal"
+                    className="border-transparent bg-muted/40 dark:bg-white/[0.04] text-xs font-normal text-foreground/90"
                   >
                     {item}
                   </Badge>

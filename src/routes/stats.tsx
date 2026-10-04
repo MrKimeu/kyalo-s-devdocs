@@ -169,13 +169,13 @@ function StatsPage() {
       {/* Top 2 Cards: Total Views & Appreciation */}
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
         {/* Total Views Card */}
-        <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 text-center shadow-xs min-h-[180px]">
+        <Card className="flex flex-col items-center justify-center rounded-xl border border-transparent bg-card p-6 text-center shadow-none min-h-[180px] backdrop-blur-sm">
           <CardContent className="flex w-full flex-col items-center p-0">
             <div className="flex items-center gap-2 text-base font-semibold text-foreground">
               <Eye className="size-5 text-primary" />
               <span>Total Views</span>
             </div>
-            <div className="my-3 w-full border-t border-border" />
+            <div className="my-3 w-full border-t border-border/40" />
             <span className="text-[56px] font-extrabold leading-none text-primary">
               {views}
             </span>
@@ -186,7 +186,7 @@ function StatsPage() {
         </Card>
 
         {/* Appreciation Count Card */}
-        <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 text-center shadow-xs min-h-[180px] relative overflow-hidden">
+        <Card className="flex flex-col items-center justify-center rounded-xl border border-transparent bg-card p-6 text-center shadow-none min-h-[180px] relative overflow-hidden backdrop-blur-sm">
           <CardContent className="flex w-full flex-col items-center p-0">
             <div className="flex items-center gap-2 text-base font-semibold text-foreground">
               <Heart className="size-5 text-[#FF2D55] fill-[#FF2D55]" />
@@ -234,7 +234,7 @@ function StatsPage() {
         </div>
 
         {/* Contribution Heatmap Card */}
-        <Card className="rounded-xl border border-border bg-card p-6 shadow-xs">
+        <Card className="rounded-xl border border-transparent bg-card p-6 shadow-none backdrop-blur-sm">
           <div className="overflow-x-auto pb-2">
             <div className="min-w-[680px]">
               {/* Month Labels */}
@@ -297,7 +297,7 @@ function StatsPage() {
         {/* 3-Column Grid of Stat Tiles */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Hireable Tile */}
-          <div className="rounded-xl border border-[#A7F3D0] bg-[#CCF2DD] p-6 shadow-xs dark:bg-emerald-950/40 dark:border-emerald-800">
+          <div className="rounded-xl border border-transparent bg-[#CCF2DD]/40 p-6 shadow-none dark:bg-emerald-950/20 backdrop-blur-sm">
             <span className="text-sm font-medium text-emerald-900 dark:text-emerald-300">
               Hireable
             </span>
@@ -307,7 +307,7 @@ function StatsPage() {
           </div>
 
           {/* Total Public Repositories */}
-          <Card className="rounded-xl border border-border bg-card p-6 shadow-xs">
+          <Card className="rounded-xl border border-transparent bg-card p-6 shadow-none backdrop-blur-sm">
             <span className="text-sm font-medium text-muted-foreground">
               Total Public Repositories
             </span>
@@ -317,7 +317,7 @@ function StatsPage() {
           </Card>
 
           {/* Followers */}
-          <Card className="rounded-xl border border-border bg-card p-6 shadow-xs">
+          <Card className="rounded-xl border border-transparent bg-card p-6 shadow-none backdrop-blur-sm">
             <span className="text-sm font-medium text-muted-foreground">
               Followers
             </span>
@@ -327,7 +327,7 @@ function StatsPage() {
           </Card>
 
           {/* Following */}
-          <Card className="rounded-xl border border-border bg-card p-6 shadow-xs">
+          <Card className="rounded-xl border border-transparent bg-card p-6 shadow-none backdrop-blur-sm">
             <span className="text-sm font-medium text-muted-foreground">
               Following
             </span>
@@ -337,7 +337,7 @@ function StatsPage() {
           </Card>
 
           {/* Current Company */}
-          <Card className="rounded-xl border border-border bg-card p-6 shadow-xs">
+          <Card className="rounded-xl border border-transparent bg-card p-6 shadow-none backdrop-blur-sm">
             <span className="text-sm font-medium text-muted-foreground">
               Current Company
             </span>
@@ -347,7 +347,7 @@ function StatsPage() {
           </Card>
 
           {/* Location */}
-          <Card className="rounded-xl border border-border bg-card p-6 shadow-xs">
+          <Card className="rounded-xl border border-transparent bg-card p-6 shadow-none backdrop-blur-sm">
             <span className="text-sm font-medium text-muted-foreground">
               Location
             </span>

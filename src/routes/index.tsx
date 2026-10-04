@@ -51,7 +51,7 @@ function Introduction() {
           {profile.summaryHighlights.map((item) => (
             <div
               key={item.label}
-              className="rounded-xl border border-border bg-card p-4 shadow-xs transition-colors hover:border-primary/40"
+              className="rounded-xl border border-transparent bg-card p-4 shadow-none backdrop-blur-sm transition-colors hover:bg-white/[0.05]"
             >
               <div className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
                 <CheckCircle2 className="size-3.5 text-primary" />
@@ -77,10 +77,10 @@ function Introduction() {
                 preload="intent"
                 className="group relative block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-xl"
               >
-                <Card className="h-full rounded-xl border border-border bg-card p-5 shadow-xs transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/40 group-hover:shadow-sm">
+                <Card className="h-full rounded-xl border border-transparent bg-card p-5 shadow-none transition-all duration-200 group-hover:-translate-y-0.5 group-hover:bg-white/[0.05] backdrop-blur-sm">
                   <CardContent className="p-0">
                     <div className="flex items-center justify-between gap-2">
-                      <Badge variant="outline" className="border-border/80 text-xs font-medium text-muted-foreground">
+                      <Badge variant="outline" className="border-transparent bg-muted/40 dark:bg-white/[0.04] text-xs font-medium text-muted-foreground">
                         {section.tag}
                       </Badge>
                       <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />

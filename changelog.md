@@ -12,6 +12,7 @@ All notable changes to the Kyalo Isaac Kimeu Developer Portfolio project are doc
 
 ### Changed
 - **Animation Calibration**: Tuned particle drift velocities and card tilt degrees to deliver a tasteful, non-distracting futuristic feel.
+- **Card Glassmorphism & Transparent Borders**: Set card backgrounds to almost transparent (`bg-card: oklch(1 0 0 / 3.5%)` / `backdrop-blur-sm`) and card borders to completely transparent (`border-transparent`) across all sections, eliminating blocky rectangular offsets and blending smoothly with the 3D particle constellation.
 - **Action Buttons**: Equipped live project cards with targeted Google Search action links and deep-dive technical modals.
 
 ## [1.2.0] - 2026-10-04
