@@ -28,12 +28,12 @@ export function PageFrame({ title, tagline, children, previous, next }: PageFram
       <div className="mt-6">{children}</div>
       <nav aria-label="Section navigation" className="mt-14 flex min-h-10 items-center justify-between border-t border-border pt-6">
         {previous ? (
-          <Link to={previous.path} className="group inline-flex items-center gap-1 text-base font-semibold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          <Link to={previous.path} preload="intent" className="group inline-flex items-center gap-1 text-base font-semibold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
             <ChevronLeft className="size-5 transition-transform group-hover:-translate-x-0.5" />{previous.label}
           </Link>
         ) : <span />}
         {next ? (
-          <Link to={next.path} className="group inline-flex items-center gap-1 text-base font-semibold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          <Link to={next.path} preload="intent" className="group inline-flex items-center gap-1 text-base font-semibold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
             {next.label}<ChevronRight className="size-5 transition-transform group-hover:translate-x-0.5" />
           </Link>
         ) : null}

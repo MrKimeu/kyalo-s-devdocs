@@ -19,7 +19,7 @@ function Timer() {
 function SectionLinks({ close = false }: { close?: boolean }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   return <nav className="flex flex-col gap-1" aria-label="Portfolio sections">{sections.map((section) => {
-    const link = <Link key={section.path} to={section.path} className={cn("flex h-9 items-center rounded-lg px-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground", pathname === section.path && "bg-accent font-semibold text-foreground")}>{section.label}</Link>;
+    const link = <Link key={section.path} to={section.path} preload="intent" className={cn("flex h-9 items-center rounded-lg px-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground", pathname === section.path && "bg-accent font-semibold text-foreground")}>{section.label}</Link>;
     return close ? <SheetClose key={section.path} asChild>{link}</SheetClose> : link;
   })}</nav>;
 }
@@ -52,16 +52,33 @@ export function PortfolioShell({ children }: { children: ReactNode }) {
   }, [navigate, pathname]);
 
   const toggleTheme = () => { const next = !dark; setDark(next); document.documentElement.classList.toggle("dark", next); window.localStorage.setItem("kimeu-theme", next ? "dark" : "light"); };
-  const toggleMusic = async () => { const audio = audioRef.current; if (!audio) return; if (playing) { audio.pause(); setPlaying(false); } else { try { await audio.play(); setPlaying(true); } catch { setPlaying(false); } } };
+  const toggleMusic = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (playing) {
+      audio.pause();
+      setPlaying(false);
+    } else {
+      try {
+        if (!audio.src) {
+          audio.src = "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3";
+        }
+        await audio.play();
+        setPlaying(true);
+      } catch {
+        setPlaying(false);
+      }
+    }
+  };
   const go = (path: SectionPath) => { setPaletteOpen(false); navigate({ to: path }); };
 
   return <TooltipProvider delayDuration={250}>
     <div className="min-h-screen bg-background text-foreground">
       <header className="fixed inset-x-0 top-0 z-40 h-16 border-b border-border bg-background">
         <div className="flex h-full items-center gap-3 px-4 md:px-7">
-          <Sheet><SheetTrigger asChild><Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu"><Menu className="size-5" /></Button></SheetTrigger><SheetContent side="left" className="w-[290px] p-6"><SheetHeader><SheetTitle className="flex items-center gap-2"><ArrowUpRight className="size-[22px]" />kimeu.is-dev</SheetTitle></SheetHeader><div className="mt-8"><p className="mb-3 text-lg font-semibold">Sections</p><SectionLinks close /></div><div className="mt-8 flex flex-col gap-2 border-t border-border pt-6"><SheetClose asChild><Link to="/" className="mobile-nav-link">Home</Link></SheetClose><a className="mobile-nav-link" href="https://www.linkedin.com/in/" target="_blank" rel="noreferrer">LinkedIn <ExternalLink /></a><a className="mobile-nav-link" href="/resume.pdf" target="_blank" rel="noreferrer">Resume <ExternalLink /></a></div></SheetContent></Sheet>
-          <Link to="/" className="flex shrink-0 items-center gap-2 text-[17px] font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><ArrowUpRight className="size-[22px]" />kimeu.is-dev</Link>
-          <nav className="ml-5 hidden items-center gap-6 text-[15px] md:flex"><Link to="/" className="font-medium text-foreground">Home</Link><a className="nav-external" href="https://www.linkedin.com/in/" target="_blank" rel="noreferrer">LinkedIn <ExternalLink /></a><a className="nav-external" href="/resume.pdf" target="_blank" rel="noreferrer">Resume <ExternalLink /></a></nav>
+          <Sheet><SheetTrigger asChild><Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu"><Menu className="size-5" /></Button></SheetTrigger><SheetContent side="left" className="w-[290px] p-6"><SheetHeader><SheetTitle className="flex items-center gap-2"><ArrowUpRight className="size-[22px]" />kimeu dev</SheetTitle></SheetHeader><div className="mt-8"><p className="mb-3 text-lg font-semibold">Sections</p><SectionLinks close /></div><div className="mt-8 flex flex-col gap-2 border-t border-border pt-6"><SheetClose asChild><Link to="/" preload="intent" className="mobile-nav-link">Home</Link></SheetClose><a className="mobile-nav-link" href="https://www.linkedin.com/in/" target="_blank" rel="noreferrer">LinkedIn <ExternalLink /></a><a className="mobile-nav-link" href="/resume.pdf" target="_blank" rel="noreferrer">Resume <ExternalLink /></a></div></SheetContent></Sheet>
+          <Link to="/" preload="intent" className="flex shrink-0 items-center gap-2 text-[17px] font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><ArrowUpRight className="size-[22px]" />kimeu dev</Link>
+          <nav className="ml-5 hidden items-center gap-6 text-[15px] md:flex"><Link to="/" preload="intent" className="font-medium text-foreground">Home</Link><a className="nav-external" href="https://www.linkedin.com/in/" target="_blank" rel="noreferrer">LinkedIn <ExternalLink /></a><a className="nav-external" href="/resume.pdf" target="_blank" rel="noreferrer">Resume <ExternalLink /></a></nav>
           <div className="ml-auto flex items-center gap-1.5">
             <Button variant="outline" className="hidden h-9 w-[280px] justify-start bg-search px-3 font-normal text-muted-foreground lg:flex" onClick={() => setPaletteOpen(true)}><Search className="size-4" /><span>Search sections…</span><kbd className="ml-auto rounded border border-border bg-background px-1.5 py-0.5 text-[11px]">⌘ K</kbd></Button>
             <Button variant="ghost" size="icon" className="hidden md:inline-flex lg:hidden" onClick={() => setPaletteOpen(true)} aria-label="Search sections"><Search /></Button>
@@ -74,7 +91,7 @@ export function PortfolioShell({ children }: { children: ReactNode }) {
       </header>
       <aside className="fixed bottom-0 left-0 top-16 hidden w-[220px] border-r border-dashed border-border px-6 py-10 md:block lg:w-[265px] lg:px-7"><h2 className="mb-3 text-xl font-semibold">Sections</h2><SectionLinks /></aside>
       <main className="min-h-screen px-4 pb-12 pt-[96px] md:ml-[220px] md:px-10 md:pt-[104px] lg:ml-[265px] lg:px-11">{children}</main>
-      <audio ref={audioRef} loop preload="none" src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" />
+      <audio ref={audioRef} loop preload="none" />
       <CommandDialog open={paletteOpen} onOpenChange={setPaletteOpen}><CommandInput placeholder="Search sections…" /><CommandList><CommandEmpty>No section found.</CommandEmpty><CommandGroup heading="Sections">{sections.map((section, index) => <CommandItem key={section.path} value={section.label} onSelect={() => go(section.path)}>{section.label}<CommandShortcut>{index + 1}</CommandShortcut></CommandItem>)}</CommandGroup></CommandList></CommandDialog>
     </div>
   </TooltipProvider>;

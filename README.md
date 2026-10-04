@@ -37,7 +37,7 @@ Main content: starts at about 310px from the left edge of the screen, with 40px 
 Sections are NOT scrolled through on one long page. The sidebar and Prev/Next buttons switch the visible section (with a short 200ms fade and 8px upward slide). The URL updates for each section.
 
 4. Navbar (left to right)
-Logo: a small diagonal arrow icon ↗ (lucide ArrowUpRight, 22px, stroke 2) followed by the brand text kimeu.is-dev in semibold 17px, foreground color.
+Logo: a small diagonal arrow icon ↗ (lucide ArrowUpRight, 22px, stroke 2) followed by the brand text kimeu dev in semibold 17px, foreground color.
 Nav links, gap 24px, 15px text:
 Home (active = foreground color, inactive = muted)
 LinkedIn with a small external-link icon (opens LinkedIn in a new tab, use https://www.linkedin.com/in/ as a placeholder URL I will replace)
