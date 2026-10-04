@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Terminal } from "lucide-react";
 import { PageFrame } from "@/components/portfolio/page-frame";
+import { ProjectTiltCard } from "@/components/portfolio/project-tilt-card";
 import { projects } from "@/data/projects";
 
 export const Route = createFileRoute("/projects")({
@@ -26,28 +26,33 @@ function ProjectsPage() {
       previous={{ label: "About Me", path: "/about" }}
       next={{ label: "Skills & Tools", path: "/skills" }}
     >
-      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {/* High-tech Sub-bar */}
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border/60 bg-muted/20 px-4 py-2.5 text-xs text-muted-foreground backdrop-blur-md">
+        <div className="flex items-center gap-2">
+          <Terminal className="size-4 text-cyan-400" />
+          <span className="font-mono font-medium text-foreground">
+            SYSTEM_REGISTRY // 07 Production & Algorithmic Deployments
+          </span>
+        </div>
+        <div className="flex items-center gap-3 font-mono text-[11px]">
+          <span className="flex items-center gap-1.5">
+            <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+            5 Live Platforms
+          </span>
+          <span className="text-border">|</span>
+          <span className="flex items-center gap-1.5 text-zinc-400">
+            <span className="size-2 rounded-full bg-zinc-500" />
+            2 Enterprise Systems
+          </span>
+        </div>
+      </div>
+
+      {/* 3D Tilt Card Grid */}
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((project) => (
-          <Card
-            key={project.title}
-            className="group flex flex-col justify-between rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <CardContent className="p-0">
-              <h2 className="text-[18px] font-semibold leading-snug text-foreground">
-                {project.title}
-              </h2>
-              <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
-                {project.description}
-              </p>
-            </CardContent>
-            <div className="mt-6 flex items-center gap-1 text-[14px] font-medium text-muted-foreground transition-colors group-hover:text-primary">
-              <span>Learn More…</span>
-              <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </div>
-          </Card>
+          <ProjectTiltCard key={project.id} project={project} />
         ))}
       </div>
     </PageFrame>
   );
 }
-

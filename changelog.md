@@ -2,6 +2,18 @@
 
 All notable changes to the Kyalo Isaac Kimeu Developer Portfolio project are documented in this file.
 
+## [1.3.0] - 2026-10-04
+
+### Added
+- **Three.js Interactive 3D Background**: Integrated lightweight, high-performance ambient 3D particle constellation and rotating geometric nodes (`ThreeBackground.tsx`) with gentle cursor attraction, auto-color adaptation for dark/light themes, and reduced-motion support.
+- **Futuristic 3D Tilt Project Cards**: Created `ProjectTiltCard.tsx` featuring real-time mouse-tracking perspective tilt, cursor glare reflections, glowing cyan cyber borders, and an in-depth architecture modal.
+- **Enterprise Screenshot Projects**: Added 3 flagship production systems (`PremierValues Limited`, `MIC3 Solution Group`, `WABA Automations`) into an expanded 7-project system registry.
+- **Core Cognitive Skills**: Added "Analytical thinking" and "Fast adaptation" chips with dedicated icons across the skills directory and category matrices.
+
+### Changed
+- **Animation Calibration**: Tuned particle drift velocities and card tilt degrees to deliver a tasteful, non-distracting futuristic feel.
+- **Action Buttons**: Equipped live project cards with targeted Google Search action links and deep-dive technical modals.
+
 ## [1.2.0] - 2026-10-04
 
 ### Added

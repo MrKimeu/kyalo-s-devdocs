@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BarChart3, BrainCircuit, Cpu, Database } from "lucide-react";
+import { BarChart3, Brain, BrainCircuit, Cpu, Database, Zap } from "lucide-react";
 import {
   SiCplusplus,
   SiCss,
@@ -33,7 +33,10 @@ const icons = [
   BrainCircuit,
   BarChart3,
   Cpu,
+  Brain,
+  Zap,
 ];
+
 const colors = [
   "text-[#E34F26]",
   "text-[#1572B6]",
@@ -50,6 +53,8 @@ const colors = [
   "text-[#A78BFA]",
   "text-[#60A5FA]",
   "text-[#34D399]",
+  "text-[#38BDF8]",
+  "text-[#F472B6]",
 ];
 
 export const Route = createFileRoute("/skills")({
@@ -126,4 +131,3 @@ function SkillsPage() {
     </PageFrame>
   );
 }
-

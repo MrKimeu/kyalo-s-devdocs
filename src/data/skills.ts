@@ -1,5 +1,21 @@
 export const skills = [
-  "HTML5", "CSS3", "JavaScript", "PHP", "Tailwind CSS", "Python", "C++", "MySQL", "T-SQL", "Docker", "Git", "GitHub", "AI/ML Integration", "Data Analysis", "Algorithmic Modeling",
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "PHP",
+  "Tailwind CSS",
+  "Python",
+  "C++",
+  "MySQL",
+  "T-SQL",
+  "Docker",
+  "Git",
+  "GitHub",
+  "AI/ML Integration",
+  "Data Analysis",
+  "Algorithmic Modeling",
+  "Analytical Thinking",
+  "Fast Adaptation",
 ] as const;
 
 export const skillCategories = [
@@ -16,16 +32,20 @@ export const skillCategories = [
     items: ["MySQL", "T-SQL"],
   },
   {
-    category: "DevOps",
-    items: ["Docker", "Git", "GitHub"],
+    category: "DevOps & Cloud",
+    items: ["Docker", "Git", "GitHub", "Nginx", "CI/CD"],
   },
   {
-    category: "AI / ML",
+    category: "AI / ML & Algorithms",
     items: ["Model integration", "Python ML libraries", "Algorithmic modeling"],
   },
   {
-    category: "Core Interests",
-    items: ["High-frequency algorithms", "Data analysis", "Decision-making systems"],
+    category: "Core Competencies",
+    items: [
+      "Analytical thinking",
+      "Fast adaptation",
+      "Decision-making systems",
+      "High-frequency algorithms",
+    ],
   },
 ] as const;
-
