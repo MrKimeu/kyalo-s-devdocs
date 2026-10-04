@@ -1,5 +1,16 @@
 # Kyalo's DevDocs
 
+<div align="center">
+
+[![Live Portfolio](https://img.shields.io/badge/LIVE_PORTFOLIO-kyalo--s--devdocs.vercel.app-8B4DFF?style=for-the-badge&logo=vercel&logoColor=white)](https://kyalo-s-devdocs.vercel.app/)
+[![GitHub Repo](https://img.shields.io/badge/GITHUB-MrKimeu%2Fkyalo--s--devdocs-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MrKimeu/kyalo-s-devdocs)
+
+**🌐 Live Demo & Deployment:** [https://kyalo-s-devdocs.vercel.app/](https://kyalo-s-devdocs.vercel.app/)
+
+</div>
+
+---
+
 Build a personal developer portfolio website for Kyalo Isaac Kimeu. Refer to the attached Kyalo Isaac Kimeu CV docx as the source of truth for all facts, experience, education, skills, and background details. It must be a pixel-faithful recreation of a specific minimal "docs-style" portfolio design that I describe in detail below: a fixed top navbar, a left "Sections" sidebar, and a single main content column that shows ONE section at a time with Previous / Next navigation at the bottom. Follow the layout, spacing, typography and component details exactly. Do not add a hero image, gradients, glassmorphism, or anything decorative that is not described here. The look is clean, white, airy, typographic, with one purple accent color.
 
 1. Tech stack
