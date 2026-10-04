@@ -17,6 +17,6 @@ export const Route = createFileRoute("/skills")({
 function SkillsPage() {
   return <PageFrame title="Skills & Tools" tagline="Learned by coding all night and debugging all day!" previous={{ label: "Projects", path: "/projects" }} next={{ label: "Experience", path: "/experience" }}>
     <p className="text-[17px] leading-[1.58] text-foreground md:text-[19px]">As a web developer with an algorithmic mindset, I build responsive, data-driven web applications and I am growing into Python and C++ for high-performance work. I also use Docker and AI/ML integration to create efficient, maintainable, robust solutions.</p>
-    <div className="mt-5 flex flex-wrap justify-center gap-3">{skills.map((skill, index) => { const Icon = icons[index]; return <span key={skill} className="flex h-[34px] items-center gap-2 rounded-lg border border-skill-border bg-skill px-3.5 text-sm font-medium text-skill-foreground transition-transform hover:scale-[1.04]"><Icon className={`size-4 ${colors[index]}`} />{skill}</span>; })}</div>
+    <div className="mt-5 flex flex-wrap justify-center gap-3">{skills.map((skill, index) => { const Icon = icons[index] ?? Cpu; return <span key={skill} className="flex h-[34px] items-center gap-2 rounded-lg border border-skill-border bg-skill px-3.5 text-sm font-medium text-skill-foreground transition-transform hover:scale-[1.04]"><Icon className={`size-4 ${colors[index] ?? "text-skill-foreground"}`} />{skill}</span>; })}</div>
   </PageFrame>;
 }
