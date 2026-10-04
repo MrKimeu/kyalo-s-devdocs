@@ -43,8 +43,10 @@ export function PortfolioShell({ children }: { children: ReactNode }) {
       const target = event.target as HTMLElement | null;
       if (target?.matches("input, textarea, [contenteditable='true']")) return;
       const index = sections.findIndex((section) => section.path === pathname);
-      if (event.key === "ArrowLeft" && index > 0) navigate({ to: sections[index - 1].path });
-      if (event.key === "ArrowRight" && index < sections.length - 1) navigate({ to: sections[index + 1].path });
+      const previous = sections[index - 1];
+      const next = sections[index + 1];
+      if (event.key === "ArrowLeft" && previous) navigate({ to: previous.path });
+      if (event.key === "ArrowRight" && next) navigate({ to: next.path });
     };
     window.addEventListener("keydown", onKey); return () => window.removeEventListener("keydown", onKey);
   }, [navigate, pathname]);

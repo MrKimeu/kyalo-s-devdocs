@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BarChart3, BrainCircuit, Cpu, Database } from "lucide-react";
-import { SiCplusplus, SiCss3, SiDocker, SiGit, SiGithub, SiHtml5, SiJavascript, SiMysql, SiPhp, SiPython, SiTailwindcss } from "react-icons/si";
+import { SiCplusplus, SiCss, SiDocker, SiGit, SiGithub, SiHtml5, SiJavascript, SiMysql, SiPhp, SiPython, SiTailwindcss } from "react-icons/si";
 import { PageFrame } from "@/components/portfolio/page-frame";
 import { skills } from "@/data/skills";
 
-const icons = [SiHtml5, SiCss3, SiJavascript, SiPhp, SiTailwindcss, SiPython, SiCplusplus, SiMysql, Database, SiDocker, SiGit, SiGithub, BrainCircuit, BarChart3, Cpu];
+const icons = [SiHtml5, SiCss, SiJavascript, SiPhp, SiTailwindcss, SiPython, SiCplusplus, SiMysql, Database, SiDocker, SiGit, SiGithub, BrainCircuit, BarChart3, Cpu];
 const colors = ["text-[#E34F26]", "text-[#1572B6]", "text-[#F7DF1E]", "text-[#777BB4]", "text-[#06B6D4]", "text-[#3776AB]", "text-[#659AD2]", "text-[#4479A1]", "text-[#CC2927]", "text-[#2496ED]", "text-[#F05032]", "text-white", "text-[#A78BFA]", "text-[#60A5FA]", "text-[#34D399]"];
 
 export const Route = createFileRoute("/skills")({
