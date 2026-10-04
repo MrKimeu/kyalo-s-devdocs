@@ -14,22 +14,34 @@ export const sections: { label: string; path: SectionPath }[] = [
 export const profile = {
   name: "Kyalo Isaac Kimeu",
   brandName: "kimeu dev",
-  role: "Web Developer",
+  role: "Web Developer | Algorithmic Systems & Data Analysis",
   email: "ikyalokimeu@gmail.com",
   location: "Nairobi, Kenya",
   github: "https://github.com/MrKimeu",
   introduction: "I am a results-driven Web Developer focused on algorithmic systems and data analysis. I enjoy building responsive web applications with HTML5, CSS3, Tailwind CSS, JavaScript and PHP, backed by MySQL and T-SQL, while integrating AI/ML models and deploying with Docker. I am currently deepening my expertise in Python and C++ to deliver production-grade, data-centric solutions.",
+  professionalSummary: "Results-driven software developer with a strong focus on high-frequency algorithms, data analysis, and decision-making systems. Experienced in web application development, network-adjacent software, and AI/ML model integration. Currently deepening expertise in Python and C++ with a determined focus on delivering production-grade algorithmic and data-centric solutions. Immediately available and open to remote, hybrid, or on-site opportunities.",
+  careerObjective: "To leverage expertise in software development and algorithmic modeling — utilizing Python, C++, and data analysis techniques — to architect innovative, scalable systems. Committed to translating complex data trends into measurable improvements and contributing to high-performance engineering teams.",
   about: [
     "I am a software developer based in Nairobi, Kenya, with a strong focus on high-frequency algorithms, data analysis and decision-making systems. I have been building for clients since 2021, from responsive web apps to real-time and geolocation-powered features.",
     "My experience spans web application development, network-adjacent software, and AI/ML model integration. I design relational database schemas optimized for query performance and data integrity, and I ship containerized applications with Docker.",
     "I am currently advancing my Python and C++ skills while finishing my Diploma in Computer Science. I am immediately available and open to remote, hybrid or on-site roles, and I want to contribute to high-performance engineering teams that turn complex data trends into measurable improvements.",
   ],
+  technicalAchievements: [
+    "Designed and implemented complex relational database schemas optimized for query performance and data integrity.",
+    "Deployed containerized web applications, demonstrating proficiency in modern DevOps practices.",
+    "Integrated AI/ML models into live applications, bridging the gap between data science and software engineering.",
+  ],
+  additionalInfo: {
+    availability: "Immediately available",
+    workMode: "Open to remote, hybrid, or on-site",
+    github: "github.com/MrKimeu",
+  },
   summaryHighlights: [
-    { label: "Role & Focus", value: "Web Developer · High-Frequency Algorithms & AI/ML" },
-    { label: "Current Position", value: "Swap Executive · Flexi Personnel (Latest)" },
+    { label: "Role & Focus", value: "Web Developer · Algorithmic Systems & Data Analysis" },
+    { label: "Current Position", value: "Swap Executive · Flexi Personel (Nairobi, Kenya)" },
     { label: "Client Delivery", value: "Self-Employed Web Developer (4+ Years Since 2021)" },
     { label: "Education", value: "Diploma in Computer Science · The Ol'Lessos National Polytechnic" },
-    { label: "Location & Status", value: "Nairobi, Kenya · Open to Remote / Hybrid / On-site" },
+    { label: "Availability", value: "Immediately Available · Remote, Hybrid, or On-site" },
   ],
   sectionPreviews: [
     {

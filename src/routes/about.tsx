@@ -31,6 +31,36 @@ function AboutPage() {
           </p>
         ))}
       </div>
+
+      {/* Career Objective from CV */}
+      <section className="mt-10 rounded-xl border border-border bg-card p-6 shadow-xs">
+        <h2 className="text-sm font-semibold uppercase tracking-wider text-primary">
+          Career Objective
+        </h2>
+        <p className="mt-2 text-base leading-relaxed text-foreground md:text-[17px]">
+          {profile.careerObjective}
+        </p>
+      </section>
+
+      {/* Technical Achievements from CV */}
+      <section className="mt-8 space-y-3">
+        <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+          Core Technical Achievements
+        </h2>
+        <div className="grid grid-cols-1 gap-3">
+          {profile.technicalAchievements.map((achievement, idx) => (
+            <div
+              key={idx}
+              className="flex items-start gap-3 rounded-lg border border-border bg-card p-4 text-sm font-medium text-foreground shadow-xs"
+            >
+              <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
+                {idx + 1}
+              </span>
+              <span>{achievement}</span>
+            </div>
+          ))}
+        </div>
+      </section>
     </PageFrame>
   );
 }
