@@ -1,0 +1,6 @@
+export type TimelineEntry = { title: string; organization: string; date: string; location: string; description: string; latest?: boolean };
+export const experience: TimelineEntry[] = [
+  { title: "Swap Executive", organization: "Flexi Personnel", date: "Aug. 2026 – Present", location: "Nairobi, Kenya", description: "Supporting the battery swapping process for Spiro under Flexi Personnel and helping clients whenever needed.", latest: true },
+  { title: "Software Developer Intern", organization: "Fluid Intelligence Networks", date: "May 2025 – Aug. 2025", location: "Thika, Kenya", description: "Supported delivery of high-speed internet infrastructure projects through network configuration and performance monitoring. Assisted in designing and developing responsive client websites, and collaborated with senior engineers on web-based systems in production environments." },
+  { title: "Self-Employed Web Developer", organization: "Freelance", date: "2021 – Present", location: "Nairobi, Kenya", description: "Designed and developed responsive web applications for diverse clients, implemented geolocation, mapping and real-time features, and managed full project lifecycles from requirements gathering through deployment and client handover." },
+];
